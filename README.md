@@ -1,7 +1,7 @@
 # Self Defending for shared mobility system
 
 ## Overview
-![Demo](https://github.com/iomanker/React-IPFS.Ethereum/tree/master/public/demo.png)
+![Demo](https://github.com/iomanker/React-IPFS.Ethereum/blob/master/public/demo.png)
 * We aim to create a platform makes client to upload their picture after finishing rental.
 * This platform is used by Truffle, Ganache-cli, React.js, Ethereum, and IPFS.
 ### Pages
