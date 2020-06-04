@@ -44,9 +44,7 @@ networks: {
     }
 }
 ```
-* truffle-config
-* truffle compile
-* truffle migrate
+
 ### React.js
 * Create React.js project in Truffle: `truffle unbox react`
 * react - npm start
