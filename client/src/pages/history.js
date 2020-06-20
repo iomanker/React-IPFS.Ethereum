@@ -54,6 +54,9 @@ function CardInfomation(props){
         );
     }
     let totalUrl = imgUrlRoot + imgUrl;
+    let unix_timestamp = parseInt(props.datetime);
+    var date = new Date(unix_timestamp);
+    var date_str = date.toString();
     return (
         <Card className={classes.cardSize}>
             <CardActionArea>
@@ -61,7 +64,7 @@ function CardInfomation(props){
             </CardActionArea>
             <CardContent>
                 <Typography>{props.gpslocation}</Typography>
-                <Typography>UNIX Time:{props.datetime} </Typography>
+                <Typography>{date_str} </Typography>
             </CardContent>
         </Card>
     );
@@ -133,7 +136,7 @@ class App extends React.Component{
         const address = evt.target.dataset['address'];
         console.log(address);
         let result = await this.getSingleRecord(address);
-        this.setState({modalContent:{title: address, imgUrl: result['1'], datetime: result['2'].words, gpslocation: result['3']}});
+        this.setState({modalContent:{title: address, imgUrl: result['1'], datetime: result['2'], gpslocation: result['3']}});
     }
 
     handleModalClose = () =>{

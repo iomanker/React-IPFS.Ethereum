@@ -72,7 +72,9 @@ class App extends React.Component{
         }
         if (ipfsAddress !== undefined && ipfsAddress !== ""){
             const recordInstance = await this.state.contract.Record.new({from: this.state.address});
-            await recordInstance.set(ipfsAddress, Date.now(), this.state.coords.text, {from: this.state.address});
+            var now_timestamp = String(Date.now());
+            console.log("Record Time:" + now_timestamp);
+            await recordInstance.set(ipfsAddress, now_timestamp, this.state.coords.text, {from: this.state.address});
             this.setState({result:{recordHashValue: recordInstance.address}});
             const personBoxInstance = await this.state.contract.PersonBox.at(this.state.boxAddress);
             personBoxInstance.append(recordInstance.address, {from: this.state.address})
